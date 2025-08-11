@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* LoopRebel PWA Design System - Mobile-First Branding
+All colors MUST be HSL format to match branding specifications.
+*/
+
+@layer base {
+  :root {
+    /* PWA LoopRebel Brand Colors - Updated for Mobile */
+    --loop-primary: 77 73% 16%;      /* #1b450c - Primary green */
+    --loop-accent: 47 90% 49%;       /* #deb90f - Accent gold */
+    --loop-brown: 42 86% 33%;        /* #99700d - Brown */
+    --loop-frame: 77 80% 12%;        /* #1b3a06 - Dark frame background */
+    --loop-button-text: 132 50% 95%; /* #f1fbf5 - Button text */
+    
+    /* Main Design System - Mobile First */
+    --background: 0 0% 100%;         /* Pure white background */
+    --foreground: 120 6% 5%;         /* Dark text on white */
+
+    --card: 0 0% 100%;               /* White cards */
+    --card-foreground: 120 6% 5%;    /* Dark text on cards */
+
+    --popover: 132 25% 88%;
+    --popover-foreground: 120 6% 5%;
+
+    --primary: 77 73% 16%;           /* Primary green */
+    --primary-foreground: 132 50% 95%;
+
+    --secondary: 47 90% 49%;         /* Accent gold */
+    --secondary-foreground: 77 80% 12%;
+
+    --muted: 42 86% 33%;             /* Brown */
+    --muted-foreground: 132 50% 95%;
+
+    --accent: 47 90% 49%;            /* Accent gold */
+    --accent-foreground: 77 80% 12%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 132 50% 95%;
+
+    --border: 77 80% 20%;
+    --input: 77 80% 18%;             /* Dark input bg */
+    --input-foreground: 132 50% 95%; /* Light input text */
+    --ring: 77 73% 16%;
+
+    --radius: 18px;
+  }
+
+  .dark {
+    /* Dark mode uses same LoopRebel branding */
+    --background: 127 80% 8%;        /* Dark frame color */
+    --foreground: 132 50% 95%;       /* Light text */
+
+    --card: 127 80% 12%;
+    --card-foreground: 132 50% 95%;
+
+    --popover: 127 80% 8%;
+    --popover-foreground: 132 50% 95%;
+
+    --primary: 129 68% 20%;          /* Slightly lighter primary */
+    --primary-foreground: 132 50% 95%;
+
+    --secondary: 0 52% 30%;          /* Lighter secondary */
+    --secondary-foreground: 132 50% 95%;
+
+    --muted: 132 37% 40%;            /* Darker muted */
+    --muted-foreground: 132 25% 75%;
+
+    --accent: 132 37% 40%;
+    --accent-foreground: 132 50% 95%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 132 50% 95%;
+
+    --border: 127 80% 15%;
+    --input: 0 52% 30%;
+    --input-foreground: 132 50% 95%;
+    --ring: 129 68% 30%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    /* PWA mobile-first styling */
+    overflow-x: hidden;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* PWA safe area support */
+  .safe-area-inset {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  /* Mobile-first responsive containers */
+  .mobile-container {
+    @apply w-full max-w-md mx-auto min-h-screen;
+  }
+}
+
+/* Hide footer LoopRebel title */
+footer h1,
+footer .brand {
+  display: none !important;
+}
